@@ -27,11 +27,75 @@ class ManageJoinUs extends CI_Controller {
 
 	public function index()
 	{		
-        $this->load->view('be/joinus/index');
+		$this->db->select('*');
+		$this->db->from('tbljobs');
+		$data['jobs'] = $this->db->get()->result_array();
+        $this->load->view('be/joinus/index', $data);
     }
 
     public function edit($id) {
-        $blogData['ID'] = $id;
-        $this->load->view('be/blog/edit', $blogData);
-    }
+        if ($id != 0) {
+			$this->db->select('*');
+			$this->db->where('ID', $id);
+			$this->db->from('tbljobs');
+			$job = $this->db->get()->row_array();
+			$job['ID'] = $id;
+		}
+		else {
+			$job['Title'] ='';
+			$job['Content'] = '';
+			$job['Enable'] = 'YES';
+			$job['ID'] = 0;
+		}
+		
+        $this->load->view('be/joinus/edit', $job);
+	}
+	
+	public function deleteJob() {
+		$ID = $this->input->post('ID');
+
+		$this->db->where('ID', $ID);
+		$result = $this->db->get('tbljobs')->row_array();
+		
+		$this->db->where('ID', $ID);
+		$this->db->delete('tbljobs');
+
+		echo json_encode(array(
+			'success' => true
+		));
+	}
+
+	public function updateJob() {
+		$date = time();
+        $avatar = "";
+
+		$ID = $this->input->post('ID');
+
+        $blog_data = array(
+            'Title' => $this->input->post('Title'),
+			'Content' => $this->input->post('Content'),
+			'Enable' => $this->input->post('Enable'),			
+        );
+
+		if ($ID == '0') {			
+			$blog_data['CreatedDate'] = date('Y-m-d H:i:s');
+			$this->db->set($blog_data);
+			$returnedID = $this->db->insert('tbljobs');
+		}
+		else {
+			$this->db->where('ID', $ID);
+			$this->db->update('tbljobs', $blog_data);
+
+			$returnedID = $this->db->affected_rows();
+		}
+
+		if ($returnedID == 0)
+			echo json_encode(array(
+				'success' => false,
+			));
+		else 		
+        	echo json_encode(array(
+				'success' => true
+			));
+	}
 }

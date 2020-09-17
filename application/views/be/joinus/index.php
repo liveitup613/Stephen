@@ -90,20 +90,26 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr>
-                                                            <td class="highlight">
-                                                                <div class="success">
-                                                                    <span class='blog-title'>How to make iOS apps with Swift</span>
-                                                                </div>                                                                
-                                                            </td>
-                                                            <td class='blog-date'> 2020-08-07 </td>
-                                                            <td>
-                                                                <a href="<?php echo base_url('admin/blog/edit/1');?>" class="btn btn-outline btn-circle btn-sm purple">
-                                                                    <i class="fa fa-edit"></i> Edit </a>
-                                                                <a href="javascript:;" class="btn btn-outline btn-circle dark btn-sm black">
-                                                                    <i class="fa fa-trash-o"></i> Delete </a>
-                                                            </td>
-                                                        </tr>                                                        
+                                                        <?php
+                                                            foreach ($jobs as $job) {
+                                                                ?>
+                                                                <tr>
+                                                                    <td class="highlight">
+                                                                        <div class="success">
+                                                                            <span class='blog-title'><?php echo $job['Title'];?></span>
+                                                                        </div>                                                                
+                                                                    </td>
+                                                                    <td class='blog-date'> <?php echo $job['CreatedDate'];?> </td>
+                                                                    <td>
+                                                                        <a href="<?php echo base_url('admin/join-us/edit/'.$job['ID']);?>" class="btn btn-outline btn-circle btn-sm purple">
+                                                                            <i class="fa fa-edit"></i> Edit </a>
+                                                                        <a href="javascript:deleteJob(<?php echo $job['ID'];?>);" class="btn btn-outline btn-circle dark btn-sm black">
+                                                                            <i class="fa fa-trash-o"></i> Delete </a>
+                                                                    </td>
+                                                                </tr> 
+                                                                <?php
+                                                            }
+                                                        ?>                                                                                                                 
                                                     </tbody>
                                                 </table>
                                             </div>                                            

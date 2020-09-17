@@ -64,9 +64,9 @@
                     <li class="menu-dropdown classic-menu-dropdown <?php echo ($parent == 'blog' ? 'active' : '');?>">
                         <a href="<?php echo base_url('admin/blog');?>"> Blog </a>                               
                     </li>
-                    <!-- <li class="menu-dropdown classic-menu-dropdown <?php echo ($parent == 'join-us' ? 'active' : '');?>">
+                    <li class="menu-dropdown classic-menu-dropdown <?php echo ($parent == 'join-us' ? 'active' : '');?>">
                         <a href="<?php echo base_url('admin/join-us');?>"> Join Us</a>                                
-                    </li>                             -->
+                    </li>                            
                 </ul>
             </div>
             <!-- END MEGA MENU -->

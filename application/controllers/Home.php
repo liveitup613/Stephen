@@ -86,7 +86,20 @@ class Home extends CI_Controller {
 	}
 
 	public function joinUs() {
-		$this->load->view('fe/join-us');
+		$this->db->select('*');
+		$this->db->where('Enable', 'YES');
+		$this->db->from('tbljobs');
+		$data['jobs'] = $this->db->get()->result_array();
+		$this->load->view('fe/join-us', $data);
+	}
+
+	public function joinUsView($ID) {		
+		$this->db->select('*');
+		$this->db->where('ID', $ID);
+		$this->db->from('tbljobs');
+		$data = $this->db->get()->row_array();
+
+		$this->load->view('fe/join-us-view', $data);
 	}
 
 	public function contactUs() {

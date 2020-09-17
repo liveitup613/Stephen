@@ -59,41 +59,23 @@
         </header>
 
         <main class="main">
-            <div class="container container-small">
-                <h2 id="our-partners" class="section__heading">Open <span>Jobs</span></h2>
-                <!-- <p>Oops! There are currently no open positions. If you’re interested in joining us, please send us your
-                    resume. It just might open up a position.</p> -->
-                <div class='joinus__jobs'>
-                    <?php 
-                        foreach ($jobs as $job) {
-                            ?>
-                                <a class='job' href='<?php echo base_url('join-us/view/'.$job['ID']);?>'>
-                                    <div class='job-title'>
-                                        <h4><?php echo $job['Title'];?></h4>
-                                    </div>
-                                    <div class='job-description'>
-                                        <p><?php echo $job['Content'];?></p>
-                                        <p class='read-more'>... see more</p>
-                                    </div>
-                                    <div class='job-date'>
-                                        <img class='icon-clock' src="<?php echo base_url('assets/images/clock.png');?>">                        
-                                        <span> 
-                                            <?php
-                                            $date = date_create($job['CreatedDate']);
-                                            echo date_format($date, 'F d, Y');
-                                            ?>
-                                        </span>
-                                    </div>
-                                </a>
-                            <?php
-                        }
-                    ?>
-                    
-                </div>                
-                <div class="joinus__cta">
-                    <h3 class="joinus__cta--title">Please send your resume to:</h3><a href="mailto:joinus@systoneit.com"
-                        class="joinus__cta--link">joinus@systoneit.com</a>
+            <div class="container container-small blog-view-container">
+                <div class='blog-title'>
+                    <h1><?php echo $Title;?></h1>
                 </div>
+                <div class='blog-date'>
+                    <img class='icon-clock' src="<?php echo base_url('assets/images/clock.png');?>">   
+                    <?php
+                        $date = date_create($CreatedDate);
+                        echo date_format($date, 'F d, Y');
+                    ?>
+                </div>                    
+                <hr>
+                <div class='blog-content'>                    
+                    <?php echo $Content;?>
+                </div>
+                <hr>
+                <a type='button' class='btn' href='<?php echo base_url('join-us');?>'>See All</a>
             </div>
         </main>
 

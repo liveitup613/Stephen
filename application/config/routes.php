@@ -58,6 +58,7 @@ $route['blog'] = 'home/blog';
 $route['join-us'] = 'home/joinUs';
 $route['contact-us'] = 'home/contactUs';
 $route['blog/view/(:num)'] = 'home/blogView/$1';
+$route['join-us/view/(:num)'] = 'home/joinUsView/$1';
 
 //Admin Page
 
@@ -90,3 +91,6 @@ $route['api/about-us/coreValue/delete'] = 'manageAboutUs/deleteCoreValue';
 
 $route['api/blog/delete'] = 'manageBlog/deleteBlog';
 $route['api/blog/edit'] = 'manageBlog/updateBlog';
+
+$route['api/job/edit'] = 'manageJoinUs/updateJob';
+$route['api/job/delete'] = 'manageJoinUs/deleteJob';
