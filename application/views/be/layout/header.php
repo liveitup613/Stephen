@@ -4,7 +4,7 @@
         <div class="container">
             <!-- BEGIN LOGO -->
             <div class="page-logo">
-                <a href="index.html">                            
+                <a href="<?php echo base_url('');?>">                            
                     <img src="<?php echo base_url('assets/layouts/global/img/logo.png');?>" alt="logo" class="logo-default" style='width: 120px;'>
                 </a>
             </div>
@@ -17,15 +17,17 @@
                 <ul class="nav navbar-nav pull-right">                                                        
                     <!-- BEGIN USER LOGIN DROPDOWN -->
                     <li class="dropdown dropdown-user dropdown-dark">
-                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                            <img alt="" class="img-circle" src="<?php echo base_url('../assets/layouts/global/img/avatar.jpg');?>">
+                        <a href="<?php echo base_url('admin/logout');?>" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                            <img alt="" class="img-circle" src="<?php echo base_url('assets/layouts/global/img/avatar.jpg');?>">
                             <span class="username username-hide-mobile">Admin</span>
                         </a>                                
                     </li>
                     <!-- END USER LOGIN DROPDOWN -->
                     <!-- BEGIN QUICK SIDEBAR TOGGLER -->
-                    <li class="dropdown-extended quick-sidebar-toggler">                                
-                        <i class="icon-logout"></i>
+                    <li class="dropdown-extended quick-sidebar-toggler">    
+                        <a href="<?php echo base_url('admin/logout');?>" style="padding: 0px; font-size: 20px; color: #8ea3b6;">                   
+                            <i class="icon-logout"></i>
+                        </a>
                     </li>
                     <!-- END QUICK SIDEBAR TOGGLER -->
                 </ul>

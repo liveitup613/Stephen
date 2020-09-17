@@ -60,16 +60,18 @@
                     <div class="contact__container d-flex">
                         <div class="contact__container--form">
                             <h2 class="title">Let’s Talk</h2>
-                            <form method="POST">
-                                <div class="form-group"><label for="name">Name</label><input type="text" name="name"
+                            <form method="POST" action="#">
+                                <div class="form-group"><label for="name">Name</label>
+                                    <input type="text" name="name" id='contactName'
                                         required="" value=""></div>
-                                <div class="form-group"><label for="phone">Phone</label><input type="number"
+                                <div class="form-group"><label for="phone">Phone</label><input type="number" id='contactPhone'
                                         name="phone" value=""></div>
-                                <div class="form-group"><label for="email">Email</label><input type="email" name="email"
+                                <div class="form-group"><label for="email">Email</label><input type="email" name="email" id='contactEmail'
                                         required="" value=""></div>
-                                <div class="form-group"><label for="message">Message</label><textarea name="message"
-                                        cols="30" rows="3" required=""></textarea></div><button type="submit"
-                                    class="btn btn-primary">Send Message</button>
+                                <div class="form-group"><label for="message">Message</label><textarea name="message" id='contactMessage'
+                                        cols="30" rows="3" required=""></textarea></div>
+                                <button type="button"
+                                    class="btn btn-primary" id='btnContact'>Send Message</button>
                             </form>
                         </div>
                         <div class="contact__container--map">                            
@@ -219,6 +221,22 @@
 
     $('.navigation__close').click(function() {
         $('.navigation').css('display', 'none');
+    })
+
+    $('#btnContact').click(function() {
+        $.ajax({
+            url : "<?php echo base_url('api/sendEmail');?>",
+            type: 'post',
+            data: {
+                name: $('#contactName').val(),
+                phone: $('#contactPhone').val(),
+                email: $('#contactEmail').val(),
+                message: $('#contactMessage').val(),
+            },
+            success: function() {
+                alert('success');
+            }
+        })
     })
     </script>
 </body>

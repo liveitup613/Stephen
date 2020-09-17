@@ -49,4 +49,10 @@ class ManageLogin extends CI_Controller {
 
 		redirect('admin/home/title');
 	}
+
+	public function logout() {
+		$this->session->set_userdata('userID', '');
+
+		redirect('admin');
+	}
 }

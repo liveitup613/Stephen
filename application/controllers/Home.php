@@ -105,4 +105,26 @@ class Home extends CI_Controller {
 	public function contactUs() {
 		$this->load->view('fe/contact-us');
 	}
+
+	public function sendEmail() {
+		$name = $this->input->post('name');
+		$phone = $this->input->post('phone');
+		$email = $this->input->post('email');
+		$message = $this->input->post('message');
+
+		$config['protocol'] = 'sendemail';
+		$config['mailpath'] = '/usr/sbin/sendmail';
+		$config['charset'] = 'iso-8859-1';
+		$config['wordwrap'] = TRUE;
+		$this->email->initialize($config);
+
+		$this->email->from($email, $name);
+		$this->email->to('liveitup613@outlook.com');
+		$this->email->cc('contact@systoneit.com');
+
+		$this->email->subject('Contact Us');
+		$this->email->message($message);
+
+		$this->email->send();
+	}
 }

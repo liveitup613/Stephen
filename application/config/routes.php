@@ -71,7 +71,7 @@ $route['admin/blog'] = 'manageBlog';
 $route['admin/blog/edit/(:num)'] = 'manageBlog/edit/$1';
 $route['admin/join-us'] = 'manageJoinUs';
 $route['admin/join-us/edit/(:num)'] = 'manageJoinUs/edit/$1';
-
+$route['admin/logout'] = 'manageLogin/logout';
 
 
 // Apis
@@ -94,3 +94,5 @@ $route['api/blog/edit'] = 'manageBlog/updateBlog';
 
 $route['api/job/edit'] = 'manageJoinUs/updateJob';
 $route['api/job/delete'] = 'manageJoinUs/deleteJob';
+
+$route['api/sendEmail'] = 'home/sendEmail';
