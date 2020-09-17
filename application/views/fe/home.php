@@ -29,12 +29,12 @@
                 </button>
                 <div class="navigation__menu">
                     <ul>
-                        <li><a aria-current="page" class="" href="/">Home</a></li>
-                        <li><a href="/what-we-do">What We Do</a></li>
-                        <li><a href="/about-us">About Us</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/join-us">Join Us</a></li>
-                        <li><a href="/contact-us">Contact Us</a></li>
+                        <li><a href="<?php echo base_url('');?>">Home</a></li>
+                        <li><a href="<?php echo base_url('what-we-do');?>">What We Do</a></li>
+                        <li><a href="<?php echo base_url('about-us');?>">About Us</a></li>
+                        <li><a href="<?php echo base_url('blog');?>">Blog</a></li>
+                        <li><a href="<?php echo base_url('join-us');?>">Join Us</a></li>
+                        <li><a href="<?php echo base_url('contact-us');?>">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="navigation__social">
@@ -79,7 +79,7 @@
             </div>
         </header>
         <div class="home__header--after"
-            style="background-image: url('/assets/images/home_BG-92c722bb1a14367f665c36a3b735959f.jpg');">
+            style="background-image: url('<?php echo base_url("assets/images/home_BG-92c722bb1a14367f665c36a3b735959f.jpg");?>');">
             <div class="container">
                 <h2 class="heading"><?php echo $AfterHeadingTitle;?></h2>
                 <p><?php echo $AfterHeadingContent;?></p>

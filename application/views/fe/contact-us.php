@@ -28,12 +28,12 @@
                 </button>
                 <div class="navigation__menu">
                     <ul>
-                        <li><a aria-current="page" class="" href="/">Home</a></li>
-                        <li><a href="/what-we-do">What We Do</a></li>
-                        <li><a href="/about-us">About Us</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/join-us">Join Us</a></li>
-                        <li><a href="/contact-us">Contact Us</a></li>
+                        <li><a href="<?php echo base_url('');?>">Home</a></li>
+                        <li><a href="<?php echo base_url('what-we-do');?>">What We Do</a></li>
+                        <li><a href="<?php echo base_url('about-us');?>">About Us</a></li>
+                        <li><a href="<?php echo base_url('blog');?>">Blog</a></li>
+                        <li><a href="<?php echo base_url('join-us');?>">Join Us</a></li>
+                        <li><a href="<?php echo base_url('contact-us');?>">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="navigation__social">
