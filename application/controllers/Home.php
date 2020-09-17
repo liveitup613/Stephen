@@ -113,7 +113,7 @@ class Home extends CI_Controller {
 		$message = $this->input->post('message');
 
 		$this->email->from('', 'Contact Us(from systoneit.com)');
-		$this->email->to('liveitup613@outlook.com');		
+		$this->email->to('contactus@systoneit.com');		
 		$this->email->subject('Contact Us');
 
 		$cotent = 'Name: '.$name. '\n\nPhone:' . $phone . '\n\nEmail:' .$email .'\n\nMessage: '. $message;
