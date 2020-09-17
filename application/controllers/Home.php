@@ -112,19 +112,17 @@ class Home extends CI_Controller {
 		$email = $this->input->post('email');
 		$message = $this->input->post('message');
 
-		$config['protocol'] = 'sendemail';
-		$config['mailpath'] = '/usr/sbin/sendmail';
-		$config['charset'] = 'iso-8859-1';
-		$config['wordwrap'] = TRUE;
-		$this->email->initialize($config);
-
-		$this->email->from($email, $name);
-		$this->email->to('liveitup613@outlook.com');
-		$this->email->cc('contact@systoneit.com');
-
+		$this->email->from('', 'Contact Us(from systoneit.com)');
+		$this->email->to('liveitup613@outlook.com');		
 		$this->email->subject('Contact Us');
-		$this->email->message($message);
 
-		$this->email->send();
+		$cotent = 'Name: '.$name. '\n\nPhone:' . $phone . '\n\nEmail:' .$email .'\n\nMessage: '. $message;
+		$this->email->message($cotent);
+
+		if ($this->email->send()) {
+			echo 'success';
+		}
+		else 
+			echo 'failed';
 	}
 }
