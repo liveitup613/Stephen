@@ -22,7 +22,7 @@
                     alt="menu">
             </button>
             <div class="header__breadcrumb"
-                style="background-image:url(/assets/images/join_us-2e9caa6633a6cc16787781773e15c9b6.jpg)">
+                style="background-image:url(<?php echo base_url('assets/images/join_us-2e9caa6633a6cc16787781773e15c9b6.jpg');?>)">
                 <h2 class="header__breadcrumb--title">Join Us</h2>
             </div>
             <nav class="navigation">

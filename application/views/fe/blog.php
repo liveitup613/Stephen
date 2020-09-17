@@ -22,7 +22,7 @@
                     alt="menu">
             </button>
             <div class="header__breadcrumb"
-                style="background-image:url(/assets/images/blog-6b380e28e2d0d212b48ef217eca5deb9.jpg)">
+                style="background-image:url(<?php echo base_url('assets/images/blog-6b380e28e2d0d212b48ef217eca5deb9.jpg');?>)">
                 <h2 class="header__breadcrumb--title">Blog</h2>
             </div>
             <nav class="navigation">
