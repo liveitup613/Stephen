@@ -85,8 +85,8 @@ $route['api/whatwedo/add'] = 'manageWhatWeDo/addNewService';
 $route['api/whatwedo/edit'] = 'manageWhatWeDo/updateService';
 $route['api/whatwedo/delete'] = 'manageWhatWeDo/deleteService';
 
-$route['api/about-us/update'] = 'manageAboutUS/updateTitle';
-$route['api/about-us/coreValue/add'] = 'manageAboutUS/addCoreValue';
+$route['api/about-us/update'] = 'manageAboutUs/updateTitle';
+$route['api/about-us/coreValue/add'] = 'manageAboutUs/addCoreValue';
 $route['api/about-us/coreValue/delete'] = 'manageAboutUs/deleteCoreValue';
 
 $route['api/blog/delete'] = 'manageBlog/deleteBlog';
