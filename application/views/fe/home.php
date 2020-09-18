@@ -69,7 +69,7 @@
                         <span
                             class="txt-rotate"
                             data-period="2000"
-                            data-rotate='[ "Communities.", "Simple"]'></span>
+                            data-rotate='[ "Communities", "Government", "Business", "Lives"]'></span>
                         </div><br>
                         <?php echo $MainHeading;?>
                     </h1>
