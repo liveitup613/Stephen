@@ -112,8 +112,14 @@ class Home extends CI_Controller {
 		$email = $this->input->post('email');
 		$message = $this->input->post('message');
 
+		$this->load->library('email');
+
+		$config['protocol'] = 'smtp';
+		$config['smtp_port'] = 25;
+		$this->email->initialize($config);
+
 		$this->email->from('', 'Contact Us(from systoneit.com)');
-		$this->email->to('contactus@systoneit.com');		
+		$this->email->to('liveitup613@outlook.com');		
 		$this->email->subject('Contact Us');
 
 		$cotent = 'Name: '.$name. '\n\nPhone:' . $phone . '\n\nEmail:' .$email .'\n\nMessage: '. $message;
