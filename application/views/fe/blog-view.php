@@ -7,6 +7,10 @@
     <meta name="generator" content="Gatsby 2.19.45">
     <title>Systone Iterations</title>
     <meta name="title" content="Systone Iterations" data-react-helmet="true">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@site_username">
+    <meta name="twitter:title" content="Top 10 Things Ever">
+    <meta name="twitter:description" content="Up than 200 characters.">
     <link rel="stylesheet"
         href="<?php echo base_url('assets/vendor/bootstrap/css/bootstrap.min.css'); ?>?<?php echo time(); ?>">
     <link rel='stylesheet' href="<?php echo base_url('assets/css/pages/home.css');?>?<?php echo time(); ?>">
@@ -63,12 +67,21 @@
                 <div class='blog-title'>
                     <h1><?php echo $Title;?></h1>
                 </div>
-                <div class='blog-date'>
-                    <img class='icon-clock' src="<?php echo base_url('assets/images/clock.png');?>">   
-                    <?php
-                        $date = date_create($CreatedDate);
-                        echo date_format($date, 'F d, Y');
-                    ?>
+                <div class='blog-detail'>
+                    <div class='blog-date'>
+                        <img class='icon-clock' src="<?php echo base_url('assets/images/clock.png');?>">   
+                        <?php
+                            $date = date_create($CreatedDate);
+                            echo date_format($date, 'F d, Y');
+                        ?>
+                    </div>
+                    <div class='blog-share'>
+                        <a class='social-share' href='https://twitter.com/share?text=<?php echo $Title;?>&url=<?php echo base_url('blog/view/'.$ID);?>' target='blank'>
+                            <img src='<?php echo base_url('assets/images/social_icon/twitter.png');?>'>
+                        </a>
+                        <a class='social-share'><img src='<?php echo base_url('assets/images/social_icon/linkedin.png');?>'></a>
+                        <a class='social-share'><img src='<?php echo base_url('assets/images/social_icon/instagram.png');?>'></a>
+                    </div>
                 </div>                    
                 <hr>
                 <div class='blog-content'>

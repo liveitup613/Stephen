@@ -1558,9 +1558,22 @@
     padding: 16px 8px;
   }
 
-  .blog-view-container .blog-date{
+  .blog-view-container .blog-detail{
+    padding: 0px 32px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  .blog-share .social-share img{
+    width: 24px;
+    height: 24px;
+  }
+
+  .blog-view-container .blog-detail .blog-date {
+    display: flex;
+    justify-content: center;
     align-items: center;
   }
 
