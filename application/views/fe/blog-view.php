@@ -13,7 +13,11 @@
     <meta name="twitter:description" content="Systoneit Blog Content">
     <meta name="twitter:creator" content="@admin">
     <meta name="twitter:image" content="<?php echo base_url('assets/images/blogs/'.$Portfolio);?>">
-    <meta name="twitter:domain" content="www.systoneit.com">
+    <meta name="twitter:domain" content="<?php echo base_url();?>">
+    <meta name="og:title" content='<?php echo $Title;?>'>
+    <meta property='og:image' content='<?php echo base_url('assets/images/blogs/'.$Portfolio);?>'>
+    <meta property='og:description' content='Systoneit Blog Content'>
+    <meta property='og:url' content='<?php echo base_url();?>'>
     <link rel="stylesheet"
         href="<?php echo base_url('assets/vendor/bootstrap/css/bootstrap.min.css'); ?>?<?php echo time(); ?>">
     <link rel='stylesheet' href="<?php echo base_url('assets/css/pages/home.css');?>?<?php echo time(); ?>">
@@ -82,7 +86,9 @@
                         <a class='social-share' href='https://twitter.com/share?text=Share Blog From Systoneit&url=<?php echo base_url('blog/view/'.$ID);?>' target='blank'>
                             <img src='<?php echo base_url('assets/images/social_icon/twitter.png');?>'>
                         </a>
-                        <a class='social-share' href='https://www.linkedin.com/shareArticle?mini=true&url=<?php echo base_url('blog/view/'.$ID);?>&title=ShareBlog' target='blank'><img src='<?php echo base_url('assets/images/social_icon/linkedin.png');?>'></a>
+                        <a class='social-share' href='https://www.linkedin.com/sharing/share-offsite/?url=<?php echo base_url('blog/view/'.$ID);?>' target='blank'>
+                            <img src='<?php echo base_url('assets/images/social_icon/linkedin.png');?>'>
+                        </a>
                         <a class='social-share'><img src='<?php echo base_url('assets/images/social_icon/instagram.png');?>'></a>
                     </div>
                 </div>                    
