@@ -9,7 +9,7 @@
     <meta name="title" content="Systone Iterations" data-react-helmet="true">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@admin">
-    <meta name="twitter:title" content="<?php echo $title;?>">
+    <meta name="twitter:title" content="<?php echo $Title;?>">
     <meta name="twitter:description" content="Systoneit Blog Content">
     <meta name="twitter:creator" content="@admin">
     <meta name="twitter:image" content="<?php echo base_url('assets/images/blogs/'.$Portfolio);?>">
