@@ -114,8 +114,16 @@ class Home extends CI_Controller {
 
 		$this->load->library('email');
 
-		$config['protocol'] = 'smtp';
-		$config['smtp_port'] = 25;
+		$config = Array(
+			'protocol' => 'smtp',
+			'smtp_host' => 'ssl://smtp.googlemail.com',
+			'smtp_port' => 465,
+			'smtp_user' => 'liveitup613@gmail.com',
+			'smtp_pass' => 'xincheng1201',
+			'mailtype' => 'html',
+			'charset' => 'iso-8859-1'
+			);
+
 		$this->email->initialize($config);
 
 		$this->email->from('', 'Contact Us(from systoneit.com)');
@@ -125,10 +133,6 @@ class Home extends CI_Controller {
 		$cotent = 'Name: '.$name. '\n\nPhone:' . $phone . '\n\nEmail:' .$email .'\n\nMessage: '. $message;
 		$this->email->message($cotent);
 
-		if ($this->email->send()) {
-			echo 'success';
-		}
-		else 
-			echo 'failed';
+		$this->email->send();
 	}
 }
