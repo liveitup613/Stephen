@@ -18,7 +18,7 @@
     <meta property="og:title" content='<?php echo $Title;?>'/>
     <meta property='og:image' content='<?php echo base_url('assets/images/blogs/'.$Portfolio);?>'/>
     <meta property='og:description' content='Systoneit Blog Content'/>
-    <meta property='og:url' content='<?php echo base_url();?>'/>
+    <meta property='og:url' content='<?php echo base_url('blog/view/'.$ID);?>'/>
     <link rel="stylesheet"
         href="<?php echo base_url('assets/vendor/bootstrap/css/bootstrap.min.css'); ?>?<?php echo time(); ?>">
     <link rel='stylesheet' href="<?php echo base_url('assets/css/pages/home.css');?>?<?php echo time(); ?>">
