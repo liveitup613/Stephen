@@ -120,7 +120,7 @@ class Home extends CI_Controller {
 			'smtp_port' => 465,
 			'smtp_user' => 'liveitup613@gmail.com',
 			'smtp_pass' => 'xincheng1201',
-			'mailtype' => 'html',
+			'mailtype' => 'text',
 			'charset' => 'iso-8859-1'
 			);
 
