@@ -14,6 +14,7 @@
     <meta name="twitter:creator" content="@admin">
     <meta name="twitter:image" content="<?php echo base_url('assets/images/blogs/'.$Portfolio);?>">
     <meta name="twitter:domain" content="<?php echo base_url();?>">
+    <meta property='og:status' content='READY'/>
     <meta property="og:title" content='<?php echo $Title;?>'/>
     <meta property='og:image' content='<?php echo base_url('assets/images/blogs/'.$Portfolio);?>'/>
     <meta property='og:description' content='Systoneit Blog Content'/>
