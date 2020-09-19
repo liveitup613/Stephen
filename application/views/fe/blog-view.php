@@ -89,8 +89,7 @@
                         </a>
                         <a class='social-share' href='https://www.linkedin.com/sharing/share-offsite/?url=<?php echo base_url('blog/view/'.$ID);?>' target='blank'>
                             <img src='<?php echo base_url('assets/images/social_icon/linkedin.png');?>'>
-                        </a>
-                        <a class='social-share'><img src='<?php echo base_url('assets/images/social_icon/instagram.png');?>'></a>
+                        </a>                        
                     </div>
                 </div>                    
                 <hr>
