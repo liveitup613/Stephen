@@ -8,9 +8,12 @@
     <title>Systone Iterations</title>
     <meta name="title" content="Systone Iterations" data-react-helmet="true">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@site_username">
-    <meta name="twitter:title" content="Top 10 Things Ever">
-    <meta name="twitter:description" content="Up than 200 characters.">
+    <meta name="twitter:site" content="@admin">
+    <meta name="twitter:title" content="<?php echo $title;?>">
+    <meta name="twitter:description" content="Systoneit Blog Content">
+    <meta name="twitter:creator" content="@admin">
+    <meta name="twitter:image" content="<?php echo base_url('assets/images/blogs/'.$Portfolio);?>">
+    <meta name="twitter:domain" content="www.systoneit.com">
     <link rel="stylesheet"
         href="<?php echo base_url('assets/vendor/bootstrap/css/bootstrap.min.css'); ?>?<?php echo time(); ?>">
     <link rel='stylesheet' href="<?php echo base_url('assets/css/pages/home.css');?>?<?php echo time(); ?>">
