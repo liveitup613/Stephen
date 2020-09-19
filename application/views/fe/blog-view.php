@@ -79,10 +79,10 @@
                         ?>
                     </div>
                     <div class='blog-share'>
-                        <a class='social-share' href='https://twitter.com/share?text=<?php echo $Title;?>&url=<?php echo base_url('blog/view/'.$ID);?>' target='blank'>
+                        <a class='social-share' href='https://twitter.com/share?text=Share Blog From Systoneit&url=<?php echo base_url('blog/view/'.$ID);?>' target='blank'>
                             <img src='<?php echo base_url('assets/images/social_icon/twitter.png');?>'>
                         </a>
-                        <a class='social-share'><img src='<?php echo base_url('assets/images/social_icon/linkedin.png');?>'></a>
+                        <a class='social-share' href='https://www.linkedin.com/shareArticle?mini=true&url=<?php echo base_url('blog/view/'.$ID);?>&title=ShareBlog' target='blank'><img src='<?php echo base_url('assets/images/social_icon/linkedin.png');?>'></a>
                         <a class='social-share'><img src='<?php echo base_url('assets/images/social_icon/instagram.png');?>'></a>
                     </div>
                 </div>                    
