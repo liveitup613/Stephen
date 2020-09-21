@@ -112,24 +112,21 @@ class Home extends CI_Controller {
 		$email = $this->input->post('email');
 		$message = $this->input->post('message');
 
-		ini_set('SMTP', "localhost");
-		ini_set('smtp_port', "25");		
+		$config = Array(
+			'protocol' => 'smtp',
+			'smtp_host' => 'ssl://smtp.gmail.com',
+			'smtp_port' => 465,
+			'smtp_user' => 'liveitup613@gmail.com',
+			'smtp_pass' => 'xincheng1201',
+			'mailtype' => 'html',
+			'charset' => 'iso-8859-1'
+			);
 
-		// $config = Array(
-		// 	'protocol' => 'smtp',
-		// 	'smtp_host' => 'ssl://smtp.googlemail.com',
-		// 	'smtp_port' => 465,
-		// 	'smtp_user' => 'liveitup613@gmail.com',
-		// 	'smtp_pass' => 'xincheng1201',
-		// 	'mailtype' => 'html',
-		// 	'charset' => 'iso-8859-1'
-		// 	);
-
-		// $this->load->library('email', $config);		
+		$this->load->library('email', $config);		
 
 		$this->email->set_newline("\r\n");
-		$this->email->from('liveitup613@gmail.com', 'liveitup');
-		$this->email->to('liveitup613@gmail.com');
+		$this->email->from('', 'liveitup');
+		$this->email->to('liveitup613@outlook.com');
 		$this->email->subject('Contact Us');
 
 		$cotent = "Name: ".$name. "\n\nPhone:" . $phone . "\n\nEmail:" .$email ."\n\nMessage: ". $message;
