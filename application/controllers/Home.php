@@ -125,11 +125,15 @@ class Home extends CI_Controller {
 		$this->load->library('email', $config);		
 
 		$this->email->set_newline("\r\n");
-		$this->email->from('', 'liveitup');
-		$this->email->to('liveitup613@outlook.com');
+		$this->email->from('systone.webcontacts@gmail.com', 'Contact Us');
+		$this->email->to('contactus@systoneit.com');
 		$this->email->subject('Contact Us');
 
-		$cotent = "Name: ".$name. "\n\nPhone:" . $phone . "\n\nEmail:" .$email ."\n\nMessage: ". $message;
+		$content = 	'<p>Name: '.$name.'</p>'.
+					'<p>Phone: '.$phone.'</p>'.
+					'<p>Email: '.$email.'</p>'.
+					'<p>Message: '.$message.'</p>';
+		
 		$this->email->message($cotent);
 
 		if ($this->email->send())
