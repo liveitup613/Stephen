@@ -125,7 +125,7 @@ class Home extends CI_Controller {
 		$this->load->library('email', $config);		
 
 		$this->email->set_newline("\r\n");
-		$this->email->from('', 'liveitup');
+		$this->email->from('liveitup613@outlook.com', 'liveitup');
 		$this->email->to('liveitup613@outlook.com');
 		$this->email->subject('Contact Us');
 
