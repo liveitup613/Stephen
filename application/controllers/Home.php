@@ -132,6 +132,12 @@ class Home extends CI_Controller {
 		$cotent = "Name: ".$name. "\n\nPhone:" . $phone . "\n\nEmail:" .$email ."\n\nMessage: ". $message;
 		$this->email->message($cotent);
 
-		$this->email->send();
+		if ($this->email->send())
+		{
+			echo "Email was successfully sent.";
+		}
+		else {  
+			show_error($this->email->print_debugger());
+		}
 	}
 }
