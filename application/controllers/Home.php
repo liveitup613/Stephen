@@ -129,10 +129,10 @@ class Home extends CI_Controller {
 		$this->email->to('liveitup613@outlook.com');
 		$this->email->subject('Contact Us');
 
-		$content = 	'<p>Name: '.$name.'</p>'.
+		$content = 	'<html><head><title>Contact Us</title></head><body><p>Name: '.$name.'</p>'.
 					'<p>Phone: '.$phone.'</p>'.
 					'<p>Email: '.$email.'</p>'.
-					'<p>Message: '.$message.'</p>';
+					'<p>Message: '.$message.'</p></body></html>';
 		
 		$this->email->message($cotent);
 
