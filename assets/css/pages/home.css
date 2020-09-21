@@ -1437,11 +1437,6 @@
     }
   }
 
-  .blog-container .row {
-    justify-content: space-between;
-    padding: 0px 32px;
-  }
-
   @media only screen and (max-width: 574px) {
     .blog-container .row {
       justify-content: space-around;
