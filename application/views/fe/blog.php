@@ -65,21 +65,23 @@
                         foreach ($blogs as $blog)
                         {
                             ?>
-                            <a class='col-md-3 col-sm-6 col-xs-12 blog' href='<?php echo base_url('blog/view/'.$blog['ID']);?>'>
-                                <div class='blog-img' style='background-image: url("<?php echo base_url('assets/images/'.($blog['Portfolio'] == '' ? 'blog-temp.png' : 'blogs/'.$blog['Portfolio']));?>")'></div>
-                                <div class='blog-title'>
-                                    <h4><?php echo $blog['Title'];?></h4>                            
-                                </div>
-                                <div class='blog-date'>
-                                    <img class='icon-clock' src="<?php echo base_url('assets/images/clock.png');?>">                        
-                                    <span>
-                                        <?php
-                                        $date = date_create($blog['CreatedDate']);
-                                        echo date_format($date, 'F d, Y');
-                                        ?>
-                                    </span>                    
-                                </div>
-                            </a>
+                            <div class='col-md-3 col-sm-6 col-xs-12 blog-box'>
+                                <a class='blog' href='<?php echo base_url('blog/view/'.$blog['ID']);?>'>
+                                    <div class='blog-img' style='background-image: url("<?php echo base_url('assets/images/'.($blog['Portfolio'] == '' ? 'blog-temp.png' : 'blogs/'.$blog['Portfolio']));?>")'></div>
+                                    <div class='blog-title'>
+                                        <h4><?php echo $blog['Title'];?></h4>                            
+                                    </div>
+                                    <div class='blog-date'>
+                                        <img class='icon-clock' src="<?php echo base_url('assets/images/clock.png');?>">                        
+                                        <span>
+                                            <?php
+                                            $date = date_create($blog['CreatedDate']);
+                                            echo date_format($date, 'F d, Y');
+                                            ?>
+                                        </span>                    
+                                    </div>
+                                </a>
+                            </div>
                             <?php
                         }
                     ?>
