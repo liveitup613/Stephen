@@ -84,6 +84,7 @@ $route['api/home/updateService'] = 'manageHome/updateService';
 $route['api/whatwedo/add'] = 'manageWhatWeDo/addNewService';
 $route['api/whatwedo/edit'] = 'manageWhatWeDo/updateService';
 $route['api/whatwedo/delete'] = 'manageWhatWeDo/deleteService';
+$route['api.whatwedo/get'] = 'manageWhatWedo/getService';
 
 $route['api/about-us/update'] = 'manageAboutUs/updateTitle';
 $route['api/about-us/coreValue/add'] = 'manageAboutUs/addCoreValue';

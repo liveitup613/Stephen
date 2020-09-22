@@ -26,8 +26,8 @@
 .profile-pic img {
     float: none;
     margin: 0 auto;
-    width: 40%;
     height: 40%;
+    max-height: 144px;
     /* -webkit-border-radius: 50%!important;
     -moz-border-radius: 50%!important;
     border-radius: 50%!important; */
@@ -66,4 +66,23 @@
     font-size: 11px;
     font-weight: 600;
     padding: 6px 15px;
+}
+
+.portfolio {
+    max-height: 150px;
+}
+
+.portfolio-box {
+    position: relative;
+    width: fit-content;    
+}
+
+.portfolio-camera {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -15px;
+    margin-left: -15px;        
 }

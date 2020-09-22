@@ -59,23 +59,68 @@ $('#btnDeleteModalYes').click(function() {
     })
 })
 
-function editService(ID, Enable) {
-    editedServiceID = ID;
+function editService(ID) {    
+    $('#ID_Edit').val(ID);
 
-    $('#Enable').val(Enable);
-    $('#editModal').modal('show');
+    $.ajax({
+        url: base_url + 'api/whatwedo/get',
+        type: 'post', 
+        data: {
+            ID : ID
+        },
+        success: function(res) {
+            var data = JSON.parse(res);
+            data = data.data;
+            if (data.success == false) {
+                showErrorToastr('Get Detail');
+                return;
+            }
+
+            $('#Title_Edit').val(data.Title);
+            $('#Content_Edit').val(data.Content);
+            $('#Enable_Edit').val(data.Enable);
+            $('#imgPortfolio').attr('src', base_url + 'assets/images/whatwedo/' + data.Portfolio);
+            $('#editModal').modal('show');
+
+        }
+    });    
+}
+
+$('.portfolio-camera').click(function() {    
+    $('#Portfolio_Edit').click();
+});
+
+$('#Portfolio_Edit').change(function () {
+    readURL(this, $('#imgPortfolio'));
+});
+
+function readURL(input, avatar) {
+	if (input.files && input.files[0]) {
+		var reader = new FileReader();
+
+		reader.onload = function (e) {
+			$(avatar)
+				.attr('src', e.target.result);
+		};
+
+		reader.readAsDataURL(input.files[0]);
+	}
 }
 
 $('#btnUpdateService').click(function() {
     $.ajax({
         url: base_url + 'api/whatwedo/edit',
-        type: 'post',
-        data: {
-            ID: editedServiceID,
-            Enable: $('#Enable').val()
-        },
-        success: function(){
-            document.location.reload();
+        method: "POST",
+		data: new FormData(document.getElementById('updateServiceForm')),
+		contentType: false,
+		cache: false,
+		processData: false,
+		dataType: "json",
+        success: function(res){
+            if (res.success == true)
+                document.location.reload();
+            else   
+                showErrorToastr('Update Service');
         },
         error: function(err) {
             showErrorToastr('Update Service');

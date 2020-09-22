@@ -98,7 +98,7 @@
                                                                 <!-- END SIDEBAR USER TITLE -->
                                                                 <!-- SIDEBAR BUTTONS -->
                                                                 <div class="profile-buttons">
-                                                                    <button type="button" class="btn btn-circle green btn-sm" onclick='editService(<?php echo $service["ID"];?>, "<?php echo $service["Enable"];?>")'>EDIT</button>
+                                                                    <button type="button" class="btn btn-circle green btn-sm" onclick='editService(<?php echo $service["ID"];?>)'>EDIT</button>
                                                                     <button type="button" class="btn btn-circle red btn-sm" onclick="deleteService(<?php echo $service['ID'];?>)">DELETE</button>
                                                                 </div>
                                                                 <!-- END SIDEBAR BUTTONS -->
@@ -151,7 +151,7 @@
                                         <div class="form-group">
                                             <label class="control-label col-md-3">Content</label>
                                             <div class="col-md-9">
-                                                <textarea type="text" class='form-control' rows='5' id='Content' name='Content' required></textarea>
+                                                <textarea type="text" class='form-control' rows='10' id='Content' name='Content' required></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -183,18 +183,40 @@
                                 <h4 class="modal-title">Edit</h4>
                             </div>
                             <div class="modal-body">
-                                <form action="" class="form-horizontal form-bordered">
+                                <form action="" class="form-horizontal form-bordered" id='updateServiceForm' enctype="multipart/form-data">
                                     <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Portfolio</label>
+                                            <div class='col-md-9'>
+                                                <div class='portfolio-box'>                                                                
+                                                    <img class='portfolio img-thumbnail' id='imgPortfolio'>
+                                                    <img class='portfolio-camera' src='<?php echo base_url('assets/images/camera.png');?>'>
+                                                    <input type='file' style='display:none' id='Portfolio_Edit' name='Portfolio' accept=".jpg,.png">
+                                                </div>
+                                            </div>
+                                        </div>           
+                                        <div class="form-group">
+                                            <input type='hidden' id='ID_Edit' name='ID'>
+                                            <label class="control-label col-md-3">Title</label>
+                                            <div class="col-md-9">
+                                                <textarea type="text" class='form-control' id='Title_Edit' name='Title' required></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Content</label>
+                                            <div class="col-md-9">
+                                                <textarea type="text" class='form-control' rows='15' id='Content_Edit' name='Content' required></textarea>
+                                            </div>
+                                        </div>                                         
                                         <div class="form-group">
                                             <label class="control-label col-md-3">Show</label>
                                             <div class="col-md-9">
-                                                <select class='form-control' id='Enable'>
+                                                <select class='form-control' id='Enable_Edit' name='Enable'>
                                                     <option value='YES'>YES</option>
                                                     <option value='NO'>NO</option>
-                                                </select>
-                                                    
+                                                </select>                                                    
                                             </div>
-                                        </div>                                                                                                                               
+                                        </div>                                                                                                          
                                     </div>                                    
                                 </form>
                             </div>

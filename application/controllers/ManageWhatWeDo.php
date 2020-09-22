@@ -74,13 +74,57 @@ class ManageWhatWeDo extends CI_Controller {
 			));
 	}
 
+	public function getService() {
+		$ID = $this->input->post('ID');
+
+		$this->db->select('*');
+		$this->db->where('ID', $ID);
+		$this->db->from('tblwhatwedo');
+		$data = $this->db->get()->row_array();
+
+		if ($data == null) {
+			echo json_encode(array(
+				'success' => false
+			));
+			return;
+		}
+
+		echo json_encode(array(
+			'success' => true,
+			'data' => $data
+		));
+	}
+
 	public function updateService() {
 		$ID = $this->input->post('ID');
-		$Enable = $this->input->post('Enable');
 
+		$serviceData = array(
+			'Title' => $this->input->post('Title'),
+			'Content' => $this->input->post('Content'),
+			'Enable' => $this->input->post('Enable')
+		);
+
+				
+		if (!empty($_FILES["Portfolio"]["name"])) {
+			$date = time();
+            $config['upload_path'] = 'assets/images/whatwedo/';
+            $config['allowed_types'] = 'jpg|jpeg|png|gif';
+            $config['overwrite'] = true;
+            $config['file_name'] = 'portfolio'.$date;
+            $this->load->library('upload', $config);
+
+            if (!$this->upload->do_upload('Portfolio')) {
+                $error =  $this->upload->display_errors();
+                echo json_encode(array('message' => $error, 'success' => false));
+                return;
+            }
+            $data = $this->upload->data();
+			$serviceData['Portfolio'] = $data['file_name'];			
+        }
+		
+		
 		$this->db->where('ID', $ID);
-		$this->db->set('Enable', $Enable);
-		$this->db->update('tblwhatwedo');
+		$this->db->update('tblwhatwedo', $serviceData);
 
 		echo json_encode(array(
 			'success' => true
