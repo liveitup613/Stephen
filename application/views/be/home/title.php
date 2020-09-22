@@ -86,7 +86,7 @@
                                                     <div class="form-group">
                                                         <label class="control-label col-md-3">Services</label>
                                                         <div class="col-md-9">
-                                                            <textarea type="text" class='form-control' rows='5' id='Serive'><?php echo $Service;?></textarea>
+                                                            <textarea type="text" class='form-control' rows='5' id='Service'><?php echo $Service;?></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
