@@ -72,7 +72,13 @@
                                         <h4><?php echo $job['Title'];?></h4>
                                     </div>
                                     <div class='job-description'>
-                                        <?php echo $job['Content'];?>
+                                        <?php
+                                            $content = $job['Content'];
+                                            $content = substr($content, 0, 300);
+                                            $replace_array = array('<p>', '</p>');
+                                            $content = str_replace($replace_array, '', $content);
+                                            echo $content;
+                                        ?>
                                         <p class='read-more'>... see more</p>
                                     </div>
                                     <div class='job-date'>
