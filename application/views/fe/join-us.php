@@ -74,7 +74,7 @@
                                     <div class='job-description'>
                                         <?php
                                             $content = $job['Content'];
-                                            $content = substr($content, 0, 300);
+                                            $content = substr($content, 0, 400);
                                             $replace_array = array('<p>', '</p>', '<br>', 'font-weight', 'font-size', 'font-family');
                                             $content = str_replace($replace_array, '', $content);
                                             echo $content;
