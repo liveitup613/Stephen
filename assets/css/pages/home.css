@@ -2032,10 +2032,8 @@
     position: relative;    
   }
 
-  .job-description p {
-    font-size: medium;    
-    display: inline;
-    padding-left: 4px;
+  .job-description {    
+    padding-left: 16px;
   }
 
   @media only screen and (max-width: 574px) {
