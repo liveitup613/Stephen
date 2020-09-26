@@ -75,7 +75,7 @@
                                         <?php
                                             $content = $job['Content'];
                                             $content = substr($content, 0, 300);
-                                            $replace_array = array('<p>', '</p>', '<br>');
+                                            $replace_array = array('<p>', '</p>', '<br>', 'font-weight', 'font-size', 'font-family');
                                             $content = str_replace($replace_array, '', $content);
                                             echo $content;
                                         ?>

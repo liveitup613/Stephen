@@ -2034,6 +2034,9 @@
 
   .job-description {    
     padding-left: 16px;
+    font-size: 12px!important;
+    color: #263c5e!important;
+    font-weight: 200!important;
   }
 
   @media only screen and (max-width: 574px) {
