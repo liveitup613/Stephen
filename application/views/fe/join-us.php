@@ -72,7 +72,7 @@
                                         <h4><?php echo $job['Title'];?></h4>
                                     </div>
                                     <div class='job-description'>
-                                        <p><?php echo $job['Content'];?></p>
+                                        <?php echo $job['Content'];?>
                                         <p class='read-more'>... see more</p>
                                     </div>
                                     <div class='job-date'>
